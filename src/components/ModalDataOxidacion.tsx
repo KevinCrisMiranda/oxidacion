@@ -53,86 +53,78 @@ function ModalDataOxidacion({ data, loading }: { data: any, loading: any }) {
     }
 
     return (
-        <div
-            className={`flex flex-col p-4 min-w-[250px] min-h-[250px] ${loading ? "items-center justify-center text-center" : "items-start justify-start text-left"
-                }`}
-        >
-            {loading ? (
-                <div className="w-64 h-64">
-                    <Lottie animationData={animated} loop={true} />
-                </div>
-            ) : (
-                <div className="w-full">
-                    <Row>
-                        <Col> </Col>
-                    </Row>
-                    <Row justify="center">
-                        <Col>
-                            <h2 className="text-xl font-bold mb-4 text-gray-800">
-                                {showH2}
-                            </h2>
-                        </Col>
-                    </Row>
+       <div
+    className={`flex flex-col p-4 min-w-[250px] min-h-[250px] bg-white dark:bg-gray-900 rounded-lg shadow-md 
+    ${loading ? "items-center justify-center text-center" : "items-start justify-start text-left"}`}
+>
+    {loading ? (
+        <div className="w-64 h-64">
+            <Lottie animationData={animated} loop={true} />
+        </div>
+    ) : (
+        <div className="w-full">
+            <Row justify="center">
+                <Col>
+                    <h2 className="text-xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+                        {showH2}
+                    </h2>
+                </Col>
+            </Row>
 
-                    {/* Mostrar fórmula de oxidación */}
-                    {showH3 && (
-                        <div className="my-6 flex flex-col gap-3">
-                            <h3 className="text-lg mb-2 font-semibold text-gray-700 flex items-center gap-2">
-                                <span className="w-3 h-3 rounded-full bg-blue-500 inline-block" /> {showH3}
-                            </h3>
-                            {showP && (
-                                <p
-                                    className="text-gray-600 text-lg font-bold pl-3"
-                                    style={{ borderLeft: "3px solid #3B82F6", marginLeft:'1rem', marginBottom:'1rem' }}
-                                >
-                                    {showP.split("").map((char, idx) =>
-                                        /\d/.test(char) ? <sub key={idx}>{char}</sub> : char
-                                    )}
-                                </p>
+            {showH3 && (
+                <div className="my-6 flex flex-col gap-3">
+                    <h3 className="text-lg mb-2 font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-blue-500 inline-block" /> {showH3}
+                    </h3>
+                    {showP && (
+                        <p
+                            className="text-gray-600 dark:text-gray-300 text-lg font-bold pl-3"
+                            style={{ borderLeft: "3px solid #3B82F6", marginLeft: "1rem", marginBottom: "1rem" }}
+                        >
+                            {showP.split("").map((char, idx) =>
+                                /\d/.test(char) ? <sub key={idx}>{char}</sub> : char
                             )}
-                        </div>
+                        </p>
                     )}
-
-                    {/* Mostrar nomenclaturas */}
-                    {show4 && (
-                        <div className="my-6 flex flex-col gap-3">
-                            <h3 className="text-lg mb-2 font-semibold text-gray-700 flex items-center gap-2">
-                                <span className="w-3 h-3 rounded-full bg-red-500 inline-block" /> Nomenclatura Sistemática
-                            </h3>
-                            <p className="text-gray-600 text-lg font-bold pl-3" style={{ borderLeft: "3px solid #EF4444", marginLeft:'1rem', marginBottom:'1rem' }}>
-                                {show4}
-                            </p>
-                        </div>
-                    )}
-
-                    {show5 && (
-                        <div className="my-6 flex flex-col gap-3">
-                            <h3 className="text-lg mb-2 font-semibold text-gray-700 flex items-center gap-2">
-                                <span className="w-3 h-3 rounded-full bg-green-500 inline-block" /> Nomenclatura Stock
-                            </h3>
-                            <p className="text-gray-600 text-lg font-bold pl-3" style={{ borderLeft: "3px solid #10B981",  marginLeft:'1rem', marginBottom:'1rem' }}>
-                                {show5}
-                            </p>
-                        </div>
-                    )}
-
-                    {show6 && (
-                        <div className="my-6 flex flex-col gap-3">
-                            <h3 className="text-lg mb-2 font-semibold text-gray-700 flex items-center gap-2">
-                                <span className="w-3 h-3 rounded-full bg-yellow-500 inline-block" /> Nomenclatura Tradicional
-                            </h3>
-                            <p className="text-gray-600 text-lg font-bold pl-3" style={{ borderLeft: "3px solid #FACC15", marginLeft:'1rem' }}>
-                                {show6}
-                            </p>
-                        </div>
-                    )}
-
-
                 </div>
+            )}
 
+            {show4 && (
+                <div className="my-6 flex flex-col gap-3">
+                    <h3 className="text-lg mb-2 font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-red-500 inline-block" /> Nomenclatura Sistemática
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-lg font-bold pl-3" style={{ borderLeft: "3px solid #EF4444", marginLeft: "1rem", marginBottom: "1rem" }}>
+                        {show4}
+                    </p>
+                </div>
+            )}
 
+            {show5 && (
+                <div className="my-6 flex flex-col gap-3">
+                    <h3 className="text-lg mb-2 font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-green-500 inline-block" /> Nomenclatura Stock
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-lg font-bold pl-3" style={{ borderLeft: "3px solid #10B981", marginLeft: "1rem", marginBottom: "1rem" }}>
+                        {show5}
+                    </p>
+                </div>
+            )}
+
+            {show6 && (
+                <div className="my-6 flex flex-col gap-3">
+                    <h3 className="text-lg mb-2 font-semibold text-gray-700 dark:text-gray-200 flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-yellow-500 inline-block" /> Nomenclatura Tradicional
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-lg font-bold pl-3" style={{ borderLeft: "3px solid #FACC15", marginLeft: "1rem" }}>
+                        {show6}
+                    </p>
+                </div>
             )}
         </div>
+    )}
+</div>
+
 
 
 

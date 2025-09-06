@@ -147,8 +147,69 @@
 }
 
 .custom-tabs .ant-tabs-content-holder {
-  border: 1px solid #c4c4c4ff; /* borde en el contenido */
+  border: 1px solid rgba(156, 155, 155, 0.829); /* borde en el contenido */
   border-radius: 0 0 8px 8px;  /* esquinas solo abajo */
   padding: 16px;
   background: white;
+}
+/* Modo dark para Ant Design Tabs */
+/* Modo dark para Ant Design Tabs */
+.dark .custom-tabs .ant-tabs-nav-list {
+  background-color: #1f2937 !important; /* fondo de la barra de tabs */
+}
+
+.dark .custom-tabs .ant-tabs-tab .ant-tabs-tab-btn {
+  color: #e5e7eb !important; /* texto de tabs inactivos */
+}
+
+.dark .custom-tabs .ant-tabs-tab .ant-tabs-tab-btn h3 {
+  color: #e5e7eb !important; /* texto de tabs inactivos si es h3 */
+}
+
+.dark .custom-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #facc15 !important; /* texto del tab activo */
+}
+
+.dark .custom-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn h3 {
+  color: #facc15 !important; /* texto del tab activo si es h3 */
+}
+
+/* Opcional: si quieres cambiar el fondo del tab activo */
+.dark .custom-tabs .ant-tabs-tab.ant-tabs-tab-active {
+  background-color: #374151 !important;
+}
+
+/* Opcional: cambiar borde inferior del tab activo */
+.dark .custom-tabs .ant-tabs-ink-bar {
+  background-color: #facc15 !important;
+}
+/* Contenido de Tabs en modo dark */
+.dark .custom-tabs .ant-tabs-content-holder {
+  background-color: #1f2937 !important; /* fondo del contenedor */
+}
+
+.dark .custom-tabs .ant-tabs-content.ant-tabs-content-top {
+  background-color: #1f2937 !important; /* fondo del contenido del tab activo */
+  color: #e5e7eb !important;           /* color del texto por defecto */
+}
+
+/* Opcional: si quieres que todo el contenido dentro del Tab tome color */
+.dark .custom-tabs .ant-tabs-content.ant-tabs-content-top * {
+  color: #e5e7eb !important;
+}
+/* Modo oscuro */
+.dark .ant-modal-content,
+.dark .ant-modal-header,
+.dark .ant-modal-footer {
+  background: #111827 !important; /* gray-900 */
+  color: #f3f4f6 !important;      /* gray-100 */
+}
+
+.dark .ant-modal-title {
+  color: #f3f4f6 !important;
+}
+
+.dark .ant-btn-primary {
+  background: #2563eb !important; /* blue-600 */
+  border-color: #2563eb !important;
 }

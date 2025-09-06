@@ -45,9 +45,7 @@ function Oxidacion() {
                         Oxidación Básica
                     </h1>
                 </Col>
-                <Col>
-                    <Search placeholder="Buscar..." className="w-80" />
-                </Col>
+              
             </Row>
 
             <Tabs defaultActiveKey="1" type="card" className="custom-tabs">
@@ -56,14 +54,13 @@ function Oxidacion() {
                         {elementosTabla
                             .filter((el) => el.valencia === 1)
                             .map((el) => (
-
                                 <Card
                                     key={el.id}
                                     className="w-28 h-28 mb-1 rounded-lg shadow p-2 text-center relative flex flex-col justify-between cursor-pointer transition-transform duration-200 hover:scale-105 hover:shadow-lg"
                                     style={{
-                                        backgroundColor: `${el.color}20`,
+                                        backgroundColor: `${el.color}50`,
                                         transition: "all 0.2s ease-in-out",
-                                        border: "0px solid transparent"
+                                        border: "0px solid transparent",
                                     }}
                                     onMouseEnter={(e) => {
                                         (e.currentTarget as HTMLElement).style.border = `1px solid ${el.color}`;
@@ -71,7 +68,10 @@ function Oxidacion() {
                                     onMouseLeave={(e) => {
                                         (e.currentTarget as HTMLElement).style.border = "0px solid transparent";
                                     }}
-                                    onClick={() => { setdataOxidacion(el); showModal(); }}
+                                    onClick={() => {
+                                        setdataOxidacion(el);
+                                        showModal();
+                                    }}
                                 >
                                     <span
                                         className="absolute top-1 right-1 text-white text-xs font-bold px-2 py-0.5 rounded"
@@ -80,29 +80,20 @@ function Oxidacion() {
                                         {el.valencia}
                                     </span>
 
-
-
-
                                     <div className="text-4xl font-bold">{el.nomenclatura}</div>
                                     <div className="text-[14px] font-medium text-gray-700">{el.elemento}</div>
-                                    {/* Nuevo span al inicio */}
 
                                     {el.valenciasDoble && (
                                         <div
                                             className="mt-1 mx-auto text-[10px] font-bold px-2 py-0.5 rounded-full"
-                                            style={{ backgroundColor: "#FFD700", color: "#000" }}
+                                            style={{ backgroundColor: "#c0aa30d0", color: "#000" }}
                                         >
-                                           {el.valenciasDoble}
+                                            {el.valenciasDoble}
                                         </div>
                                     )}
                                 </Card>
-
-
                             ))}
                     </div>
-
-
-
                 </TabPane>
             </Tabs>
 
@@ -135,12 +126,12 @@ function Oxidacion() {
                                     </span>
                                     <div className="text-4xl font-bold">{el.nomenclatura}</div>
                                     <div className="text-[14px] font-medium text-gray-700">{el.elemento}</div>
-                                        {el.valenciasDoble && (
+                                    {el.valenciasDoble && (
                                         <div
                                             className="mt-1 mx-auto text-[10px] font-bold px-2 py-0.5 rounded-full"
-                                            style={{ backgroundColor: "#FFD700", color: "#000" }}
+                                            style={{ backgroundColor: "#c0aa30d0", color: "#000" }}
                                         >
-                                           {el.valenciasDoble}
+                                            {el.valenciasDoble}
                                         </div>
                                     )}
                                 </Card>
@@ -182,12 +173,12 @@ function Oxidacion() {
                                     </span>
                                     <div className="text-4xl font-bold">{el.nomenclatura}</div>
                                     <div className="text-[14px] font-medium text-gray-700">{el.elemento}</div>
-                                     {el.valenciasDoble && (
+                                    {el.valenciasDoble && (
                                         <div
                                             className="mt-1 mx-auto text-[10px] font-bold px-2 py-0.5 rounded-full"
-                                            style={{ backgroundColor: "#FFD700", color: "#000" }}
+                                            style={{ backgroundColor: "#c0aa30d0", color: "#000" }}
                                         >
-                                           {el.valenciasDoble}
+                                            {el.valenciasDoble}
                                         </div>
                                     )}
                                 </Card>
@@ -229,12 +220,12 @@ function Oxidacion() {
                                     </span>
                                     <div className="text-4xl font-bold">{el.nomenclatura}</div>
                                     <div className="text-[14px] font-medium text-gray-700">{el.elemento}</div>
-                                        {el.valenciasDoble && (
+                                    {el.valenciasDoble && (
                                         <div
                                             className="mt-1 mx-auto text-[10px] font-bold px-2 py-0.5 rounded-full"
-                                            style={{ backgroundColor: "#FFD700", color: "#000" }}
+                                            style={{ backgroundColor: "#c0aa30d0", color: "#000" }}
                                         >
-                                           {el.valenciasDoble}
+                                            {el.valenciasDoble}
                                         </div>
                                     )}
                                 </Card>
@@ -247,7 +238,7 @@ function Oxidacion() {
                 </TabPane>
             </Tabs>
 
-             <Tabs defaultActiveKey="1" type="card" className="custom-tabs mt-1">
+            <Tabs defaultActiveKey="1" type="card" className="custom-tabs mt-1">
                 <TabPane tab={<h3>Valencia 5</h3>} key="1">
                     <div className="flex flex-wrap gap-12 justify-start">
                         {elementosTablaVale5
@@ -276,12 +267,12 @@ function Oxidacion() {
                                     </span>
                                     <div className="text-4xl font-bold">{el.nomenclatura}</div>
                                     <div className="text-[14px] font-medium text-gray-700">{el.elemento}</div>
-                                        {el.valenciasDoble && (
+                                    {el.valenciasDoble && (
                                         <div
                                             className="mt-1 mx-auto text-[10px] font-bold px-2 py-0.5 rounded-full"
-                                            style={{ backgroundColor: "#FFD700", color: "#000" }}
+                                            style={{ backgroundColor: "#c0aa30d0", color: "#000" }}
                                         >
-                                           {el.valenciasDoble}
+                                            {el.valenciasDoble}
                                         </div>
                                     )}
                                 </Card>
@@ -324,12 +315,12 @@ function Oxidacion() {
                                     </span>
                                     <div className="text-4xl font-bold">{el.nomenclatura}</div>
                                     <div className="text-[14px] font-medium text-gray-700">{el.elemento}</div>
-                                        {el.valenciasDoble && (
+                                    {el.valenciasDoble && (
                                         <div
                                             className="mt-1 mx-auto text-[10px] font-bold px-2 py-0.5 rounded-full"
-                                            style={{ backgroundColor: "#FFD700", color: "#000" }}
+                                            style={{ backgroundColor: "#c0aa30d0", color: "#000" }}
                                         >
-                                           {el.valenciasDoble}
+                                            {el.valenciasDoble}
                                         </div>
                                     )}
                                 </Card>
@@ -342,7 +333,7 @@ function Oxidacion() {
                 </TabPane>
             </Tabs>
 
-            
+
             <Tabs defaultActiveKey="1" type="card" className="custom-tabs mt-1">
                 <TabPane tab={<h3>Valencia 7</h3>} key="1">
                     <div className="flex flex-wrap gap-12 justify-start">
@@ -372,12 +363,12 @@ function Oxidacion() {
                                     </span>
                                     <div className="text-4xl font-bold">{el.nomenclatura}</div>
                                     <div className="text-[14px] font-medium text-gray-700">{el.elemento}</div>
-                                        {el.valenciasDoble && (
+                                    {el.valenciasDoble && (
                                         <div
                                             className="mt-1 mx-auto text-[10px] font-bold px-2 py-0.5 rounded-full"
-                                            style={{ backgroundColor: "#FFD700", color: "#000" }}
+                                            style={{ backgroundColor: "#c0aa30d0", color: "#000" }}
                                         >
-                                           {el.valenciasDoble}
+                                            {el.valenciasDoble}
                                         </div>
                                     )}
                                 </Card>
@@ -390,15 +381,18 @@ function Oxidacion() {
                 </TabPane>
             </Tabs>
 
-            <Modal
-                // title={<h2 className="text-xl font-bold">Oxidación Básica: {dataOxidacion.elemento}</h2>}
-                closable={{ 'aria-label': 'Custom Close Button' }}
-                open={isModalOpen}
-                onOk={handleOk}
-                onCancel={handleCancel}
-            >
-                <ModalDataOxidacion data={dataOxidacion} loading={loading} />
-            </Modal>
+<Modal
+  open={isModalOpen}
+  onOk={handleOk}
+  onCancel={handleCancel}
+  closable={{ 'aria-label': 'Custom Close Button' }}
+  getContainer={false}  // 🔑 asegura que se renderice dentro del div con "dark"
+>
+
+  <ModalDataOxidacion data={dataOxidacion} loading={loading} />
+</Modal>
+
+
 
         </div>
     );
